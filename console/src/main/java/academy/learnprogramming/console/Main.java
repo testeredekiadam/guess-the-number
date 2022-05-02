@@ -33,10 +33,6 @@ public class Main {
 		log.info("number = {}", number);
 		
 		
-		/*		
-		// call reset method
-		game.reset();
- 		*/
 		
 		//get message generator bean from context (container)
 		MessageGenerator messageGenerator = context.getBean(MessageGenerator.class);
