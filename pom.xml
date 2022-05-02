@@ -9,6 +9,7 @@
   <modules>
   	<module>core</module>
   	<module>guess-the-number-game.core</module>
+  	<module>console</module>
   </modules>
   
 	<dependencyManagement>

@@ -1,9 +1,13 @@
-package academy.learnprogramming;
+package academy.learnprogramming.console;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import academy.learnprogramming.AppConfig;
+import academy.learnprogramming.MessageGenerator;
+import academy.learnprogramming.NumberGenerator;
 
 public class Main {
 	private static final Logger log = LoggerFactory.getLogger(Main.class);
@@ -25,8 +29,6 @@ public class Main {
 		// log generated number
 		log.info("number = {}", number);
 		
-		// get game bean from context (container)
-		Game game = context.getBean(Game.class);
 		
 		/*		
 		// call reset method
