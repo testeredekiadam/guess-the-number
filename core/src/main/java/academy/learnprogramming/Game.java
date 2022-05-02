@@ -1,6 +1,6 @@
 package academy.learnprogramming;
 
-interface Game {
+public interface Game {
 	
 	int getNumber();
 	int getGuess();

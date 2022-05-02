@@ -6,6 +6,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import academy.learnprogramming.AppConfig;
+import academy.learnprogramming.Game;
 import academy.learnprogramming.MessageGenerator;
 import academy.learnprogramming.NumberGenerator;
 
@@ -22,6 +23,8 @@ public class Main {
 		// get number generator bean from context (container)
 		NumberGenerator numberGenerator
 				= context.getBean(NumberGenerator.class);
+		
+		Game game = context.getBean(Game.class);
 		
 		// call method next() to get a random number
 		int number = numberGenerator.next();
