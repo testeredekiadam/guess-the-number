@@ -5,10 +5,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import academy.learnprogramming.AppConfig;
 import academy.learnprogramming.Game;
 import academy.learnprogramming.MessageGenerator;
 import academy.learnprogramming.NumberGenerator;
+import academy.learnprogramming.config.AppConfig;
 
 public class Main {
 	private static final Logger log = LoggerFactory.getLogger(Main.class);

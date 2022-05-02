@@ -2,13 +2,16 @@ package academy.learnprogramming;
 
 import java.util.Random;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 
 public class NumberGeneratorImpl implements NumberGenerator {
 
 	// == fields ==
 	private final Random random = new Random();
 	
-	private int maxNumber = 100;
+	@Autowired
+	private int maxNumber;
 	
 	
 	// == public methods ==
