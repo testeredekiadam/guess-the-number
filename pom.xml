@@ -1,0 +1,59 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <groupId>academy.learnprogramming</groupId>
+  <artifactId>guess-the-number-game</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  
+  <modules>
+  	<module>core</module>
+  	<module>guess-the-number-game.core</module>
+  </modules>
+  
+	<dependencyManagement>
+	
+		<dependencies>
+			
+			<!-- Logging -->
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-classic</artifactId>
+				<version>1.3.0-alpha14</version>
+			</dependency>
+			
+			<!-- Spring context -->
+			<dependency>
+			    <groupId>org.springframework</groupId>
+			    <artifactId>spring-context</artifactId>
+			    <version>5.3.14</version>
+			</dependency>
+			
+			<!-- Java annotation API -->
+			<dependency>
+			    <groupId>javax.annotation</groupId>
+			    <artifactId>javax.annotation-api</artifactId>
+			    <version>1.3.2</version>
+			</dependency>
+						
+		</dependencies>
+
+	</dependencyManagement>
+	  
+	  
+	  <build>
+	  	<plugins>
+	  		<plugin>
+		  		<groupId>org.apache.maven.plugins</groupId>
+		        <artifactId>maven-compiler-plugin</artifactId>
+		        <version>3.10.1</version>
+		        <configuration>
+		        	<target>17</target>
+		        	<release>17</release>
+		        	<source>17</source>
+		        </configuration>
+	  		</plugin>
+	  	</plugins>
+	  
+	  </build>
+</project>
