@@ -5,26 +5,25 @@ import javax.annotation.PostConstruct;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-/*
- * add a logger - X
- * add a field of type Game and autowire it - X
- * add a field guessCount (int) and initialize it to 10 for now (we will change this later) - X
- * add a @PostConstruct method and log value of game to confirm it was autowired e.g. not null - X
- * create a bean method in AppConfig -> MessageGenerator - X
- * In the main method get the MessageGenerator bean and call both methods
- * Check the console output and confirm that both methods are called
- */
+
+@Component
 public class MessageGeneratorImpl implements MessageGenerator{
 	
 	// == constants ==
 	private static final Logger log = LoggerFactory.getLogger(MessageGeneratorImpl.class);
 	
 	// == fields ==
-	@Autowired
+
 	private Game game;
 	
-	private int guessCount = 10;
+	
+	// == constructors ==
+	@Autowired
+	public MessageGeneratorImpl(Game game) {
+		this.game = game;
+	}
 	
 	// == init ==
 	@PostConstruct
@@ -32,6 +31,8 @@ public class MessageGeneratorImpl implements MessageGenerator{
 		log.debug("game value is {}", game);
 	}
 	
+
+
 	// == public methods ==
 	@Override
 	public String getMainMessage() {

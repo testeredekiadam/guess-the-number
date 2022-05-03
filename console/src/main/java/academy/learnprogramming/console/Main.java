@@ -5,10 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import academy.learnprogramming.Game;
-import academy.learnprogramming.MessageGenerator;
-import academy.learnprogramming.NumberGenerator;
-import academy.learnprogramming.config.AppConfig;
+import academy.learnprogramming.config.GameConfig;
 
 public class Main {
 	private static final Logger log = LoggerFactory.getLogger(Main.class);
@@ -18,29 +15,9 @@ public class Main {
 		
 		// create context (container)
 		ConfigurableApplicationContext context
-				= new AnnotationConfigApplicationContext(AppConfig.class);
+				= new AnnotationConfigApplicationContext(GameConfig.class);
 		
-		// get number generator bean from context (container)
-		NumberGenerator numberGenerator
-				= context.getBean(NumberGenerator.class);
-		
-		Game game = context.getBean(Game.class);
-		
-		// call method next() to get a random number
-		int number = numberGenerator.next();
-		
-		// log generated number
-		log.info("number = {}", number);
-		
-		
-		
-		//get message generator bean from context (container)
-		MessageGenerator messageGenerator = context.getBean(MessageGenerator.class);
-		
-		// call methods from message generator
-		log.info("main message = {}", messageGenerator.getMainMessage());
-		log.info("result = {}", messageGenerator.getResultMessage());
-		
+
 		// close context (container)
 		context.close();
 	}
