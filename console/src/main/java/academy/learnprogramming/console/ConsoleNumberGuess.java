@@ -11,12 +11,12 @@ import org.springframework.stereotype.Component;
 
 import academy.learnprogramming.Game;
 import academy.learnprogramming.MessageGenerator;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @Component
 public class ConsoleNumberGuess {
 	
-	// == constants ==
-	private static final Logger log = LoggerFactory.getLogger(ConsoleNumberGuess.class);
 		
 	// == fields ==
 	 

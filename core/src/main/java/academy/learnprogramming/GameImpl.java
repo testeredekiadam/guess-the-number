@@ -3,30 +3,33 @@ package academy.learnprogramming;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
+
 
 @Component
+@Getter
+@Slf4j
 public class GameImpl implements Game {
-
-	// == constants ==
-	private static final Logger log = LoggerFactory.getLogger(GameImpl.class);
 	
 	// == fields ==
-	
+	@Getter(AccessLevel.NONE)
 	private NumberGenerator numberGenerator;
 	
 	private int guessCount;
-	
-	private int guess;
 	private int number;
 	private int smallest;
 	private int biggest;
 	private int remainingGuesses;
 	private boolean validNumberRange = true;
+	
+	@Setter
+	private int guess;
 	
 	/* Constructor Based Dependency Injection  */
 	
@@ -65,43 +68,6 @@ public class GameImpl implements Game {
 		this.numberGenerator = numberGenerator;
 	}
 	
-	
-	@Override
-	public int getNumber() {
-		return number;
-	}
-
-	@Override
-	public int getGuess() {
-		return guess;
-	}
-
-	@Override
-	public void setGuess(int guess) {
-		this.guess = guess;
-	}
-
-	@Override
-	public int getSmallest() {
-		return smallest;
-	}
-
-	@Override
-	public int getBiggest() {
-		return biggest;
-	}
-
-	@Override
-	public int getRemainingGuesses() {
-		return remainingGuesses;
-	}
-
-	
-	@Override
-	public int getGuessCount() {
-		return guessCount;
-	}
-
 	@Override
 	public void check() {
 		checkValidNumberRange();
@@ -117,11 +83,6 @@ public class GameImpl implements Game {
 		}
 		
 		remainingGuesses--;
-	}
-
-	@Override
-	public boolean isValidNumberRange() {
-		return validNumberRange;
 	}
 
 	@Override
