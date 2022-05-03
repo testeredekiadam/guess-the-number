@@ -11,6 +11,7 @@ public class NumberGeneratorImpl implements NumberGenerator {
 	private final Random random = new Random();
 	
 	@Autowired
+	@MaxNumber
 	private int maxNumber;
 	
 	
@@ -25,5 +26,4 @@ public class NumberGeneratorImpl implements NumberGenerator {
 		return maxNumber;
 	}
 	
-
 }
